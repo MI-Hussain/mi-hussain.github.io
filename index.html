@@ -1,30 +1,163 @@
-cat > index.html <<'EOF'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>M. I. Hussain – CV</title>
+  <title>M. I. Hussain | AI Researcher</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Personal academic & research portfolio of Muhammad Ishfaq Hussain (AI / Computer Vision / Large-Scale AI).">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="assets/img/avatar.jpg">
+  <meta property="og:title" content="M. I. Hussain | AI Researcher">
+  <meta property="og:description" content="AI • Computer Vision • Multimodal • Large-Scale Models">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/avatar.jpg">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
-  <header>
-    <h1>Muhammad Ishfaq Hussain</h1>
-    <p>Machine Learning • Computer Vision • Large-Scale AI</p>
-    <nav>
-      <a href="cv.pdf" download>Download PDF</a>
-      <a href="mailto:ishfaq.gist@gmail.com">Email</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Curriculum Vitae</h2>
-    <p>This page provides a quick link to my CV PDF. I will expand it later.</p>
-    <iframe src="cv.pdf" style="width:100%;height:80vh;border:1px solid #ccc;"></iframe>
-  </main>
-  <footer>
-    <small>&copy; <script>document.write(new Date().getFullYear())</script> M. I. Hussain.</small>
-  </footer>
+<header id="top" class="site-header">
+  <div class="brand">
+    <img src="assets/img/avatar.jpg" alt="Portrait of M. I. Hussain" class="avatar">
+    <div>
+      <h1>M. I. Hussain</h1>
+      <p class="subtitle">AI / Computer Vision / Multimodal LLMs</p>
+    </div>
+  </div>
+  <nav class="nav">
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn small" href="cv.pdf" download>CV PDF ↓</a></li>
+      <li><button id="themeToggle" class="btn small" aria-label="Toggle dark mode">🌓</button></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h2>Building intelligent systems for science & healthcare.</h2>
+    <p>I am a Postdoctoral Research Fellow at <strong>KISTI (Large-Scale AI)</strong> focusing on multimodal large language models, medical image understanding, and applied computer vision.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="cv.pdf" class="btn outline" download>Download CV</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">▼</div>
+</section>
+
+<main>
+  <section id="about">
+    <h3>About</h3>
+    <p>I specialize in <strong>vision-language modeling</strong>, <strong>medical imaging AI</strong>, and scalable training workflows. My current work involves fine-tuning and evaluating multimodal LLMs (e.g. MedGemma / PaliGemma variants) for visual question answering in radiology and broader scientific AI applications.</p>
+    <p>I enjoy translating research ideas into reproducible, performant systems while keeping an eye on interpretability and clinical usefulness.</p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="grid chips">
+      <span>Python</span><span>PyTorch</span><span>DeepSpeed</span><span>QLoRA</span><span>Transformers</span>
+      <span>Vision-Language Models</span><span>Medical Imaging</span><span>Prompt Engineering</span>
+      <span>Distributed Training</span><span>Evaluation Pipelines</span><span>Docker</span><span>GitHub Actions</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h3>Experience</h3>
+    <div class="timeline">
+      <article>
+        <h4>Postdoctoral Research Fellow – KISTI (Large-Scale AI)</h4>
+        <span class="time">Jul 2024 – Present</span>
+        <ul>
+          <li>Fine-tuning multimodal LLMs (MedGemma / PaliGemma) on VQA-RAD & domain datasets.</li>
+          <li>Optimized distributed inference & training using DeepSpeed + LoRA (reduced GPU memory by ~40%).</li>
+        </ul>
+      </article>
+      <article>
+        <h4>Ph.D. Researcher – GIST</h4>
+        <span class="time">2018 – 2023</span>
+        <ul>
+          <li>Thesis on predictive modeling and data fusion for autonomous driving vision systems.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Selected Projects</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>PMC-VQA Evaluation Suite</h4>
+        <p>Benchmark & scripts for evaluating medical VQA models across multiple datasets with harmonized metrics.</p>
+        <p class="tags"><span>Python</span><span>PyTorch</span><span>Evaluation</span></p>
+        <p><a href="#" target="_blank" rel="noopener">Repo</a></p>
+      </div>
+      <div class="card">
+        <h4>MedGemma Fine-tuning Pipeline</h4>
+        <p>Modular training harness with DeepSpeed & QLoRA, supporting mixed precision & gradient checkpointing.</p>
+        <p class="tags"><span>DeepSpeed</span><span>QLoRA</span><span>MLOps</span></p>
+        <p><a href="#" target="_blank" rel="noopener">Repo</a></p>
+      </div>
+      <div class="card">
+        <h4>Autonomous Driving Sensor Fusion</h4>
+        <p>Research prototypes for fusing multi-camera & LiDAR signals—improved object detection stability.</p>
+        <p class="tags"><span>Multimodal</span><span>CV</span><span>Fusion</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h3>Selected Publications</h3>
+    <ol class="pubs">
+      <li>Hussain, M. I. et al. <strong>Title of Recent Paper.</strong> <em>Conference / Journal</em>, 2025.</li>
+      <li>Hussain, M. I. et al. <strong>Another Title Here.</strong> <em>Venue</em>, 2024.</li>
+    </ol>
+    <p><a href="https://scholar.google.com/..." target="_blank" rel="noopener">Full list on Google Scholar →</a></p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:ishfaq.gist@gmail.com">ishfaq.gist@gmail.com</a></p>
+    <p>
+      <a href="https://github.com/MI-Hussain" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Scholar</a>
+    </p>
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Message<textarea name="message" rows="4" required></textarea></label>
+      <input type="hidden" name="_subject" value="Portfolio Contact">
+      <button type="submit" class="btn primary">Send</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> M. I. Hussain · Built with pure HTML/CSS/JS · <a href="#top">Back to top ↑</a></p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Muhammad Ishfaq Hussain",
+  "jobTitle":"Postdoctoral Research Fellow",
+  "affiliation":"KISTI",
+  "url":"https://MI-Hussain.github.io/cv-site/",
+  "email":"mailto:ishfaq.gist@gmail.com",
+  "sameAs":[
+    "https://github.com/MI-Hussain",
+    "https://www.linkedin.com/in/YOUR_LINKEDIN",
+    "https://scholar.google.com/citations?user=YOUR_ID"
+  ]
+}
+</script>
 </body>
 </html>
-EOF
-
