@@ -1,0 +1,30 @@
+cat > index.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M. I. Hussain – CV</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Muhammad Ishfaq Hussain</h1>
+    <p>Machine Learning • Computer Vision • Large-Scale AI</p>
+    <nav>
+      <a href="cv.pdf" download>Download PDF</a>
+      <a href="mailto:ishfaq.gist@gmail.com">Email</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Curriculum Vitae</h2>
+    <p>This page provides a quick link to my CV PDF. I will expand it later.</p>
+    <iframe src="cv.pdf" style="width:100%;height:80vh;border:1px solid #ccc;"></iframe>
+  </main>
+  <footer>
+    <small>&copy; <script>document.write(new Date().getFullYear())</script> M. I. Hussain.</small>
+  </footer>
+</body>
+</html>
+EOF
+

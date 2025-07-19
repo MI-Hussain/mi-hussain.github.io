@@ -1,0 +1,36 @@
+cat > style.css <<'EOF'
+body {
+  font-family: system-ui, Arial, sans-serif;
+  margin:0;
+  line-height:1.45;
+  background:#f7f9fc;
+  color:#222;
+}
+header {
+  background:linear-gradient(135deg,#1f4d8b,#3c86c8);
+  color:#fff;
+  text-align:center;
+  padding:2.5rem 1rem 1.2rem;
+}
+header h1 { margin:0 0 .5rem; font-size:2rem; }
+nav a {
+  display:inline-block;
+  margin:.25rem .5rem;
+  padding:.4rem .8rem;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  text-decoration:none;
+  border-radius:999px;
+  font-size:.85rem;
+}
+main { max-width:900px; margin:2rem auto 4rem; padding:0 1.2rem; }
+h2 { margin-top:0; }
+iframe { background:#fff; }
+footer {
+  text-align:center;
+  padding:1.5rem 1rem 2.5rem;
+  background:#eef3f8;
+  font-size:.75rem;
+}
+EOF
+
