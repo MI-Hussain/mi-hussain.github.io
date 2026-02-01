@@ -15,24 +15,21 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-👋 Hello! I’m an artificial intelligence researcher with over a decade of experience in computer vision and machine learning. Driven by a passion for tackling complex problems, my work spans diverse areas including diffusion models and GANs for image-to-image translation, medical AI with a focus on computational pathology, and event-based vision leveraging event cameras. You can explore my latest interests [here](/cv/#interests-1), and/or keep reading for a concise overview about me.
+👋 Hello! I’m an artificial intelligence researcher with a decade of experience in computer vision and machine learning. Driven by a passion for tackling complex problems, my work spans diverse areas, including generative models for autonomous driving, Sensor Fusion, medical AI with a focus on computational pathology, and multispectral IR Cameras. You can explore my latest interests [here](/cv/#interests-1), and/or keep reading for a concise overview about me.
 
 `Current Affiliations`
 
-(1) I am a postdoctoral researcher at Seoul National University (SNU) [Machine Perception and Reasoning lab](https://snumprlab.github.io/people.html) since 2024. I collaborate mostly on event-based vision, and image-to-image translation research involving diffusion and consistency models.
+(1) I am a Postdoctoral Research Fellow at Gwangju Institute of Science and Technology (GIST) [Artificial Intelligence AI Graduate School (Machine Perception and Reasoning)](https://sites.google.com/view/mlv/people/alumni?authuser=0) since 2025. I collaborate mostly on computer vision, robotics, automation, and Agentic AI.
 
-(2)  In addition, I am affiliated with two institutes under South Korea’s Ministry of Science and ICT through the [InnoCORE](https://www.msit.go.kr/eng/bbs/view.do?sCode=eng&mId=4&mPid=2&pageIndex=&bbsSeqNo=42&nttSeqNo=1128&searchOpt=ALL&searchTxt=innocore) (Innovation + Core Researchers) program: Daegu Gyeongbuk Institute of Science and Technology (DGIST) Bio-Embodied Physical AI Research Group [Computer vision lab](https://cvlab.dgist.ac.kr/projects/), and Korea Advnaced Institute of Science and Technology (KAIST) [Visual Intelligence lab](https://vi.kaist.ac.kr).
-
-`Back to Academia after Industry`
-I was a nomadic postdoc researcher position at Medical Imaging and Signal Processing Research Center [MISP](https://misp.mui.ac.ir/) at the Medical University of Isfahan, Iran. This project is held by Iran's National Elites Foundation [INEF](https://en.wikipedia.org/wiki/Iran%27s_National_Elites_Foundation) conducted via the [Connect Platform](https://connect.isti.ir/). In addition to developing CV/ML data and deep learning project that are mainly focused on medical AI, I design and teach AI courses to medical students and professors to foster interdisciplinary research teams.
+(2)  In addition, I am also affiliated with South Korea’s Ministry of Science and ICT through the [InnoCORE](https://www.msit.go.kr/eng/bbs/view.do?sCode=eng&mId=4&mPid=2&pageIndex=&bbsSeqNo=42&nttSeqNo=1128&searchOpt=ALL&searchTxt=innocore) (Innovation + Core Researchers) program: Daegu Gyeongbuk Institute of Science and Technology (DGIST) Bio-Embodied Physical AI Research Group [Computer vision lab](https://cvlab.dgist.ac.kr/projects/).
 
 `Industry Experience after PhD`
-As a Senior Research Scientist and Team Leader at [Lunit](https://www.lunit.io)’s Oncology AI group, I’ve been at the forefront of driving progress. Our collaborative efforts have led to prestigious awards, impactful research papers, and even a patent. Though our team was titled model-centric, I further thrive on exploring data-centric, and engineering-centric approaches to advance the field.
+As a Postdoctoral researcher / Senior Research Scientist worked at [KISTI](https://www.kisti.re.kr/)’s Large Scale AI Research group (Div of [National Science and Technology Data]). I worked on AI for Science (Situation awareness and decision support with large-scale AI models (Visual LLM)), Computer vision for 3D medical imaging models (CT/MRI/Ultrasound) for virtual human body representation [Digital Twin] 
 
 `Academic Journey`
-During my Ph.D. research at [GIST](https://www.gist.ac.kr/en/main.html) (and [KAIST](https://www.kaist.ac.kr/en/)), I deeply explored many exciting applications of[ event cameras](https://en.wikipedia.org/wiki/Event_camera) (event-based-vision). My work spanned areas such as image reconstruction, super-resolution, and stereo depth estimation. Recognized at top conferences, my findings have been published in esteemed journals.
+During my Ph.D. research at [GIST](https://www.gist.ac.kr/en/main.html), I explored of machine learning for robotics and automation (self-driving cars). My work was sensor fusion and drivable region estimation. My findings have been published in esteemed IEEE Transactions journals and conferences.
 
 `My Mission`
-My north star is enhancing business efficiency and ensuring sustainable growth in every project I undertake. I am passionate about contributing to AI for humanitarian causes, working to save lives, alleviate suffering, and uphold human dignity.
+I am continuously exploring myself to see where I can contribute to [AI for Science].
 
-Feel free to explore my [CV](/cv/), [GitHub](https://github.com/smmmmi) and [Google Scholar](https://scholar.google.com/citations?user=NNvELCcAAAAJ) profiles for more details about my research and contributions.
+Feel free to explore my [CV](/cv/), [GitHub](https://github.com/smmmmi) and [Google Scholar](https://scholar.google.com/citations?user=Z7CMLAwAAAAJ&hl=en&authuser=1) profiles for more details about my research and contributions.
