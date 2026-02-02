@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-10-21 07:59:00-0400
+date: 2025-11-10 07:59:00-0400
 inline: true
 related_posts: false
 ---
 
-I'm invited as keynote speaker at the 2024 IAI event's “gathering of artificial intelligence activists” hosted by the [Iran's National Elites Foundation](https://en.wikipedia.org/wiki/Iran%27s_National_Elites_Foundation).
+I'm invited as keynote speaker at the 2025 City of Busan AI event's “4th International Fire Investigation Seminar Utilizing the AI” hosted by the [Busan Fire & Disaster Headquarters].
