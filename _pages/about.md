@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>mihussain</a> yet another ai (cv/ml) researcher
+subtitle: <a href='#'>mihussain</a> AI (cv/ml) Researcher
 
 profile:
   align: right
-  image: phono.png
+  image: prof_pic.png
   image_circular: true # crops the image to make it circular
   more_info: >
 
