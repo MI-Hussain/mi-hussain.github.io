@@ -3,95 +3,100 @@
   contents:
     - name: Full Name
       value: Muhammad Ishfaq Hussain
+    - name: Emails
+      value: ishfaq.gist@gmail.com; ishfaqhussain@gm.gist.ac.kr
+    - name: Residency
+      value: Permanent residency in the Republic of Korea
     - name: Date of Birth
-      value: 12th Dec 1988
+      value: 12 Dec 1988
     - name: Languages
       value: English, Korean
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: Gwangju Institute of Science and Technology, Gwangju, Rep. of Korea
-      year: 2023
+    - title: Ph.D., Machine Learning & Computer Vision
+      institution: Gwangju Institute of Science and Technology (GIST), Gwangju, Republic of Korea
+      year: 2018 – Aug 2023
       description:
-        - School of Electrical Engineering and Computer Science.
-        - Machine Learning and Computer Vision.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - "Thesis: Predictive Modelling Through Data Fusion for Autonomous Driving Systems"
+        - "Collaboration: GIST–MIT joint research collaboration"
+    - title: M.S., Computer Software Engineering
+      institution: National University of Sciences and Technology (NUST), Pakistan
+      year: 2014 – 2016
       description:
-        - Description 1.
-        - Description 2.
+        - "Thesis: LSTM Neural Nodes for Spatio-temporal Analysis"
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Postdoctoral Research Fellow — AI Convergence Department
+      institution: GIST, Gwangju, Republic of Korea
+      year: Aug 2025 – Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Research in AI/ML and computer vision at GIST.
+    - title: Postdoctoral Research Fellow — Large-Scale AI Research Group
+      institution: KISTI, Republic of Korea
+      year: Jul 2024 – Aug 2025
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+        - Division of National Science & Technology Data.
+        - Situation awareness and decision support algorithms using large-scale AI (Visual LLM/VLM).
+    - title: Postdoctoral Research Fellow — School of EECS
+      institution: GIST, Gwangju, Republic of Korea
+      year: Sep 2023 – Jul 2024
+    - title: Research Assistant
+      institution: GIST, Gwangju, Republic of Korea
+      year: 2018 – Aug 2023
+    - title: Teaching Assistant
+      institution: GIST, Gwangju, Republic of Korea
+      year: 2019 – 2021
+    - title: Software Developer
+      institution: Gumption Technologies, Pakistan
+      year: 2013 – 2014
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: GitHub
+      year: —
+      description: GitHub is listed on the CV header (add your GitHub URL here).
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - "Keynote Speaker — “AI for Fire and Investigation with recent trends,” Busan Fire and Investigation, Republic of Korea"
+    - year: 2024
       items:
-        - Max Planck Medal
+        - "Excellence Paper Award — Korea Next Generation Computing Society"
+    - year: 2022
+      items:
+        - "EECS Outstanding Research Performance (1st Prize) — GIST"
+    - year: 2021
+      items:
+        - "Outstanding Paper Award — Korea Software Congress (KSC)"
+        - "Research Assistant Scholarship — GIST"
+    - year: 2018
+      items:
+        - "Korean Government Scholarship (Ph.D.) — GIST"
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: AI & Machine Learning
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Artificial Intelligence (AI)
+        - Machine Learning
+        - Vision-Language models (VLM / Visual LLM)
+    - title: Computer Vision, Robotics, and Systems
       items:
-        - Description 1.
-        - Description 2.
+        - Computer Vision
+        - Robotics and Automation
+        - Multi-spectral sensor fusion
+        - Digital twins
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - "<u>Hobbies:</u> (not specified in CV)"
