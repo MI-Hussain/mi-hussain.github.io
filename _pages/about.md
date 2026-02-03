@@ -21,12 +21,6 @@ I specialize in **vision-language modeling**, **medical imaging AI**, and scalab
 
 I enjoy translating research ideas into reproducible, performant systems while keeping an eye on interpretability and clinical usefulness.
 
-### Skills
-
-PythonPyTorchDeepSpeedQLoRATransformers
-Vision-Language ModelsMedical ImagingPrompt Engineering
-Distributed TrainingEvaluation PipelinesDockerGitHub Actions
-
 ### Experience
 
 #### Postdoctoral Research Fellow – Gwangju Institute of Science and Technology (GIST)
@@ -125,6 +119,13 @@ MultimodalCVFusion
    IF 8.263
 
 [Full list on Google Scholar →](https://scholar.google.com/citations?user=Z7CMLAwAAAAJ&hl=en&authuser=1)
+
+### Skills
+
+Python PyTorch DeepSpeed QLoRA Transformers
+Vision-Language Models Medical Imaging Prompt Engineering
+Distributed Training Evaluation Pipelines Docker GitHub Actions
+
 
 ### Contact
 
