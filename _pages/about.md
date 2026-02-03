@@ -6,7 +6,7 @@ subtitle: <a href='#'>mihussain</a> AI (cv/ml) Researcher
 
 profile:
   align: right
-  image: image.png
+  image: /img/image.png
   image_circular: true # crops the image to make it circular
   more_info: >
 
