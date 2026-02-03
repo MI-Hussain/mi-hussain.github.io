@@ -11,6 +11,6 @@ nav_order: 2
 <!-- _pages/publications.md -->
 <div class="publications">
 
-{% comment %}{% bibliography %}{% endcomment %}
+{% bibliography %}
 
 </div>
