@@ -1,102 +1,103 @@
-name: Deploy site
-
-on:
-  push:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
-
-  pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
-
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.2.2"
-          bundler-cache: true
-
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
-
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
-
-      - name: Install and Build 🔧
-        run: |
-          pip3 install --upgrade jupyter
-          export JEKYLL_ENV=production
-          bundle exec jekyll build
-
-      - name: Purge unused CSS 🧹
-        run: |
-          npm install -g purgecss
-          purgecss -c purgecss.config.js
-
-      - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: _site
+build_log:
+  status: "failed"
+  duration: "11s"
+  action: "actions/jekyll-build-pages@v1"
+  command: >
+    /usr/bin/docker run --name ghcrioactionsjekyllbuildpagesv1013_5b804f 
+    --label b76088 --workdir /github/workspace --rm 
+    -e "INPUT_SOURCE" -e "INPUT_DESTINATION" -e "INPUT_FUTURE" 
+    -e "INPUT_BUILD_REVISION" -e "INPUT_VERBOSE" -e "INPUT_TOKEN" 
+    -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" 
+    -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" 
+    -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" 
+    -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" 
+    -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" 
+    -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" 
+    -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" 
+    -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" 
+    -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" 
+    -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" 
+    -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" 
+    -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" 
+    -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" 
+    -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" 
+    -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" 
+    -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" 
+    -e "ACTIONS_CACHE_URL" -e "ACTIONS_ID_TOKEN_REQUEST_URL" 
+    -e "ACTIONS_ID_TOKEN_REQUEST_TOKEN" -e "ACTIONS_RESULTS_URL" 
+    -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true 
+    -v "/var/run/docker.sock":"/var/run/docker.sock" 
+    -v "/home/runner/work/_temp":"/github/runner_temp" 
+    -v "/home/runner/work/_temp/_github_home":"/github/home" 
+    -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" 
+    -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" 
+    -v "/home/runner/work/mi-hussain.github.io/mi-hussain.github.io":"/github/workspace" 
+    ghcr.io/actions/jekyll-build-pages:v1.0.13
+  missing_gems:
+    - classifier-reborn (2.3.0)
+    - jekyll (4.3.3)
+    - jekyll-archives (2.2.1)
+    - jekyll-email-protect (1.1.0)
+    - jekyll-get-json (1.0.0)
+    - jekyll-imagemagick (1.4.0)
+    - jekyll-jupyter-notebook (0.0.6)
+    - jekyll-link-attributes (1.0.1)
+    - jekyll-minifier (0.1.10)
+    - jekyll-paginate-v2 (3.0.0)
+    - jekyll-scholar (7.1.3)
+    - jekyll-tabs (1.2.1)
+    - jekyll-toc (0.18.0)
+    - jekyll-twitter-plugin (2.1.0)
+    - mini_racer (0.12.0)
+    - unicode_utils (1.4.0)
+    - css_parser (1.17.1)
+    - feedjira (3.2.3)
+    - httparty (0.22.0)
+    - fast-stemmer (1.0.2)
+    - addressable (2.8.6)
+    - jekyll-sass-converter (3.0.0)
+    - mercenary (0.4.0)
+    - rouge (4.2.1)
+    - terminal-table (3.0.2)
+    - deep_merge (1.2.2)
+    - cssminify2 (2.0.1)
+    - htmlcompressor (0.4.0)
+    - json-minify (0.0.3)
+    - uglifier (4.2.0)
+    - bibtex-ruby (6.1.0)
+    - citeproc-ruby (1.1.14)
+    - csl-styles (1.0.1.11)
+    - nokogiri (1.16.5)
+    - libv8-node (21.7.2.0)
+    - loofah (2.22.0)
+    - sax-machine (1.3.2)
+    - mini_mime (1.1.5)
+    - multi_xml (0.7.1)
+    - public_suffix (5.0.5)
+    - concurrent-ruby (1.2.3)
+    - sass-embedded (1.77.0)
+    - unicode-display_width (2.5.0)
+    - json (2.7.2)
+    - latex-decode (0.4.0)
+    - citeproc (1.0.10)
+    - csl (1.6.0)
+    - activesupport (7.1.3.2)
+    - crass (1.0.6)
+    - google-protobuf (4.26.1)
+    - rb-inotify (0.10.1)
+    - namae (1.2.0)
+    - minitest (5.22.3)
+    - rake (13.2.1)
+    - ffi (1.16.3)
+  error_details:
+    warning: "The github-pages gem can't satisfy your Gemfile's dependencies."
+    liquid_exception: "Liquid syntax error (line 4): Unknown tag 'bibliography' in _pages/publications.md"
+    stack_trace: |
+      /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/document.rb:23:in `unknown_tag': Liquid syntax error (line 4): Unknown tag 'bibliography' (Liquid::SyntaxError)
+      from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/document.rb:11:in `block in parse'
+      ... (rest of the trace)
+  configuration:
+    jekyll_version: "3.10.0"
+    theme: "jekyll-theme-primer"
+    source: "/github/workspace/."
+    destination: "/github/workspace/./_site"
