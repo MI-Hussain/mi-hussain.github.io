@@ -1,22 +1,22 @@
-- title: General Information
+- title: Muhammad Ishfaq Hussain
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Muhammad Ishfaq Hussain
     - name: Date of Birth
-      value: 14th March 1879
+      value: 12th Dec 1988
     - name: Languages
-      value: English, German
+      value: English, Korean
 
 - title: Education
   type: time_table
   contents:
     - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+      institution: Gwangju Institute of Science and Technology, Gwangju, Rep. of Korea
+      year: 2023
       description:
-        - Description 1.
-        - Description 2.
+        - School of Electrical Engineering and Computer Science.
+        - Machine Learning and Computer Vision.
         - title: Description 3.
           contents:
             - Sub-description 1.
