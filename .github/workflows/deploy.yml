@@ -2,74 +2,81 @@ name: Deploy site
 
 on:
   push:
-    branches: ["main", "master"]
-  pull_request:
-    branches: ["main", "master"]
+    branches: [ "main" ]
+    # Trigger on all relevant content changes (including PDFs, images, and config)
+    paths:
+      - "**"
+      - "!lighthouse_results/**"
+      - "!.github/workflows/axe.yml"
+      - "!.github/workflows/broken-links.yml"
+      - "!.github/workflows/deploy-docker-tag.yml"
+      - "!.github/workflows/deploy-image.yml"
+      - "!.github/workflows/docker-slim.yml"
+      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/prettier.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
+      - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Install system dependencies (ImageMagick)
+      # If you really need Jupyter notebook support, keep this.
+      # If not needed, you can remove it.
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Jupyter (optional) 📓
+        run: python -m pip install --upgrade pip jupyter
+
+      - name: Install ImageMagick 🖼️
         run: |
           sudo apt-get update
           sudo apt-get install -y imagemagick
+          which convert
           convert -version
 
-      # Optional: only keep if you really use jekyll-jupyter-notebook
-      - name: Install Python deps (optional)
-        run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install --upgrade jupyter
+      # This keeps your original behavior, but safer (doesn't auto-commit).
+      - name: Update _config.yml giscus repo (no commit) ⚙️
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          commitChange: false
+          valueFile: "_config.yml"
+          propertyPath: "giscus.repo"
+          value: ${{ github.repository }}
 
-      - name: Build site
-        env:
-          JEKYLL_ENV: production
+      - name: Build site 🔧
         run: |
-          bundle exec jekyll build -d _site
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --trace
 
-      # Optional: keep only if you really use purgecss
-      - name: Purge unused CSS (optional)
+      - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
 
-      - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: pages-artifact
-          path: _site
-
-  deploy:
-    if: github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: pages-artifact
+          branch: gh-pages
+          folder: _site
+          clean: true
+          single-commit: true
