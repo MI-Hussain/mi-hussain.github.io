@@ -2,11 +2,18 @@ name: Deploy site
 
 on:
   push:
-    branches: [ "main" ]
-    # Trigger on all relevant content changes (including PDFs, images, and config)
+    branches:
+      - master
+      - main
     paths:
-      - "**"
-      - "!lighthouse_results/**"
+      - "assets/**"
+      - "**.html"
+      - "**.js"
+      - "**.liquid"
+      - "**/*.md"
+      - "**.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -14,48 +21,59 @@ on:
       - "!.github/workflows/docker-slim.yml"
       - "!.github/workflows/lighthouse-badger.yml"
       - "!.github/workflows/prettier.yml"
+      - "!lighthouse_results/**"
+      - "!CONTRIBUTING.md"
+      - "!CUSTOMIZE.md"
+      - "!FAQ.md"
+      - "!INSTALL.md"
+      - "!README.md"
+
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "assets/**"
+      - "**.html"
+      - "**.js"
+      - "**.liquid"
+      - "**/*.md"
+      - "**.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "!.github/workflows/axe.yml"
+      - "!.github/workflows/broken-links.yml"
+      - "!.github/workflows/deploy-docker-tag.yml"
+      - "!.github/workflows/deploy-image.yml"
+      - "!.github/workflows/docker-slim.yml"
+      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/prettier.yml"
+      - "!lighthouse_results/**"
+      - "!CONTRIBUTING.md"
+      - "!CUSTOMIZE.md"
+      - "!FAQ.md"
+      - "!INSTALL.md"
+      - "!README.md"
+
   workflow_dispatch:
 
 permissions:
   contents: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Ruby 💎
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2"
+          ruby-version: "3.2.2"
           bundler-cache: true
 
-      # If you really need Jupyter notebook support, keep this.
-      # If not needed, you can remove it.
-      - name: Setup Python 🐍
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install Jupyter (optional) 📓
-        run: python -m pip install --upgrade pip jupyter
-
-      - name: Install ImageMagick 🖼️
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick
-          which convert
-          convert -version
-
-      # This keeps your original behavior, but safer (doesn't auto-commit).
-      - name: Update _config.yml giscus repo (no commit) ⚙️
+      - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
@@ -63,10 +81,14 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
 
-      - name: Build site 🔧
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Install and Build 🔧
         run: |
+          pip3 install --upgrade jupyter
           export JEKYLL_ENV=production
-          bundle exec jekyll build --trace
+          bundle exec jekyll build
 
       - name: Purge unused CSS 🧹
         run: |
@@ -74,9 +96,7 @@ jobs:
           purgecss -c purgecss.config.js
 
       - name: Deploy 🚀
+        if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
           folder: _site
-          clean: true
-          single-commit: true
