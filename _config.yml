@@ -2,13 +2,13 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Muhammad Ishfaq Hussain. # the website title (if blank, full name will be used instead)
+title: "Muhammad Ishfaq Hussain, Ph.D." # the website title (if blank, full name will be used instead)
 first_name: Muhammad. Ishfaq
 middle_name:
 last_name: Hussain.
 email: ishfaq.gist@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Computer Vision, Machine Learning, Sensor Fusion, Robotics, Automation, LLM, Visual LLM, Agentic AI.
+  "AI / Computer Vision / Robotics Researcher | Autonomous Systems & Multimodal Fusion / Agentic AI / Visual LLM".
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 keywords: Computer Vision, Machine Learning, Sensor Fusion, Robotics, Automation, LLM, Visual LLM, Agentic AI. # add your own keywords or leave empty
